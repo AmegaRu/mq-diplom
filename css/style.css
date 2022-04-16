@@ -41,11 +41,7 @@ body {
 		margin-top: 30px;
 	}
 	.trend {
-		max-width: 450px;
-		width: 24.75%;
-	}
-	.trend:nth-child(n+2) {
-		margin-left: 3px;
+		width: calc(25% - 3px);
 	}
 	.page {
 		margin-top: 65px;
@@ -74,13 +70,10 @@ body {
 		justify-content: center;
 	}
 	.item {
-		width: 350px;
-		padding-top: 170px; 
-	}.item:nth-child(2) {
-		margin: 0 50px;
+		width: 30%;
 	}
-	.item_img {
-    bottom: 240px;
+	.item:nth-child(2) {
+		margin: 0 50px;
 	}
 }
 
@@ -169,34 +162,26 @@ body {
 	.shops {
 		margin: 45px 0;
 	}
-	.shops_box {
-		max-width: 870px;
-		margin-left: auto;
-		margin-right: auto;
-	}
 	.item {
-		max-width: 45%;
-		padding-top: 220px;
-		margin-right: 30px;
-		margin-bottom: 30px;
+		max-width: calc(50% - 45px);
 	}
-	.item_img {
-    bottom: 240px;
+	.item:nth-child(odd) {
+		margin-left: 35px;
+	}
+	.item:nth-child(even) {
+		margin-left: 20px;
+	}
+	.item:nth-child(n+3) {
+		margin-top: 25px;
 	}
 }
 
 @media (min-width: 641px) and (max-width: 1200px) {
 	.trend {
-		width: 49.5%;
-	}
-	.trend:nth-child(2n+2) {
-		margin-left: 3px;
-	}
+		width: calc(50% - 2px);
+	}	
 	.trend:nth-child(n+2) {
 		margin-top: 3px;
-	}
-	.trend_img {
-		width: 100%;
 	}
 }
 
@@ -298,12 +283,10 @@ body {
 		justify-content: center;
 	}
 	.item {
-		width: 340px;
-		padding-top: 255px;
-		margin-bottom: 25px; 
+		width: calc(100% - 30px);
 	}
-	.item_img {
-    bottom: 240px;
+	.item:nth-child(n+2) {
+		margin-top: 25px;
 	}
 }
 
@@ -314,20 +297,14 @@ body {
 	.trend:nth-child(n+2) {
 		margin-top: 3px;
 	}
-	.trend_img {
-		width: 100%;
-	}
 }
 
 @media (max-width: 640px) and (orientation: landscape) {
 	.trend {
-		width: 49.5%;
+		width: calc(50% - 2px);
 	}
 	.trend:nth-child(n+3) {
 		margin-top: 3px;
-	}
-	.trend:nth-child(2n+2) {
-		margin-left: 3px;
 	}
 }
 
@@ -417,7 +394,7 @@ body {
 .trends_box {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
+	justify-content: space-between;
 }
 
 .trend {
@@ -450,6 +427,7 @@ body {
 }
 
 .trend_img {
+	width: 100%;
 	margin: auto;
 }
 
@@ -771,26 +749,28 @@ body {
 }
 
 .item {
-	position: relative;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 }
 
 .item_img {
-	width: calc(100% - 40px);
-    position: absolute;
+	width: 100%;
     z-index: -1;
-    overflow: hidden;
     display: flex;
     justify-content: center;
+}
+
+.pict_img {
+	width: calc(100% - 40px);
 }
 
 .item_box {
 	box-sizing: border-box;
 	border: 3px solid #d3c59d;
 	font-size: 15px;
-	height: 260px;
-	padding: 40px 15px 0;
+	margin-top: -30px;
+	padding: 45px 20px 25px;
+	flex-grow: 1;
 }
 
 .item_title {
